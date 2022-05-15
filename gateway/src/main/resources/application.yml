@@ -1,0 +1,30 @@
+server:
+  port: 8900
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.48.26.152:8848
+        password: nacos
+        username: nacos
+    gateway:
+      routes:
+        # 基于注册中心的路由策略
+        - id: login-server
+          # 基于lb负载均衡形式转发，后面地址为注册中心的服务名称
+          uri: lb://login-server
+          # 匹配规则
+          predicates:
+            - Path=/login/**
+          filters:
+            # 转发请求时去掉1级前缀，eg：http://localhost:9999/login/test?token=111中间的member字段会被清掉
+            - StripPrefix=1
+      discovery:
+        # 路由访问方式：http://Gateway_HOST:Gateway_PORT/大写的serviceId/**，其中微服务应用名默认大写访问
+        locator:
+          # 是否与服务发现组件进行结合，通过 serviceId(必须设置成大写) 转发到具体的服务实例。默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
+          enabled: true
+          # 允许通过模块名小写代理
+          lower-case-service-id: true

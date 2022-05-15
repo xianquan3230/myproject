@@ -1,0 +1,32 @@
+server:
+  port: 9000
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.48.26.152:8848
+        username: nacos
+        password: nacos
+  application:
+    name: login-server
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://120.48.26.152:12345/lcoil?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 12345
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      idle-timeout: 180000
+      auto-commit: true
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+logging:
+  level:
+    root: info
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*=/com/lcoil/mapper/*.xml
+  type-aliases-package: org.example.mapper
