@@ -21,6 +21,12 @@ spring:
           filters:
             # 转发请求时去掉1级前缀，eg：http://localhost:9999/login/test?token=111中间的member字段会被清掉
             - StripPrefix=1
+        - id: es-server
+          uri: lb://es-server
+          predicates:
+            - Path=/es/**
+          filters:
+            - StripPrefix=1
       discovery:
         # 路由访问方式：http://Gateway_HOST:Gateway_PORT/大写的serviceId/**，其中微服务应用名默认大写访问
         locator:

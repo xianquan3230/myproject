@@ -1,14 +1,14 @@
 server:
   port: 9000
 spring:
+  application:
+    name: login-server
   cloud:
     nacos:
       discovery:
         server-addr: 120.48.26.152:8848
         username: nacos
         password: nacos
-  application:
-    name: login-server
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://120.48.26.152:12345/lcoil?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
@@ -21,7 +21,11 @@ spring:
       auto-commit: true
       connection-timeout: 30000
       connection-test-query: SELECT 1
-
+  elasticsearch:
+    rest:
+      username: elastic
+      password: 123456
+      uris: 120.48.26.152:9200
 logging:
   level:
     root: info

@@ -1,0 +1,21 @@
+server:
+  port: 9800
+spring:
+  application:
+    name: es-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.48.26.152:8848
+        username: nacos
+        password: nacos
+  elasticsearch:
+    rest:
+      host: 120.48.26.152
+      port: 9200
+      username: elastic
+      password: 123456
+      uris: 120.48.26.152:9200
+logging:
+  level:
+    root: info
