@@ -1,5 +1,8 @@
 server:
   port: 8900
+  servlet:
+    # 应用的访问路径
+    context-path: /
 spring:
   application:
     name: gateway
@@ -28,11 +31,18 @@ spring:
             - Path=/es/**
           filters:
             - StripPrefix=1
-        #
+        # rocketmq
         - id: rocketmq-server
           uri: lb://rocketmq-server
           predicates:
             - Path=/mq/**
+          filters:
+            - StripPrefix=1
+        # rocketmq
+        - id: webhook-server
+          uri: lb://webhook-server
+          predicates:
+            - Path=/webhook/**
           filters:
             - StripPrefix=1
       discovery:

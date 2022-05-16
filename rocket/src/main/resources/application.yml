@@ -1,5 +1,8 @@
 server:
   port: 9900
+  servlet:
+    # 应用的访问路径
+    context-path: /
 spring:
   application:
     name: rocketmq-server
