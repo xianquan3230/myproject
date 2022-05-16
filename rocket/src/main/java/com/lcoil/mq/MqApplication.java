@@ -1,20 +1,20 @@
-package com.lcoil.es;
+package com.lcoil.mq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * @Classname EsApplication
+ * @Classname MqApplication
  * @Description TODO
- * @Date 2022/5/15 12:46 PM
+ * @Date 2022/5/15 7:47 PM
  * @Created by l-coil
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class EsApplication {
+public class MqApplication {
     public static void main(String[] args) {
-        SpringApplication.run(EsApplication.class,args);
-        System.out.println("es-server start success！");
+        SpringApplication.run(MqApplication.class,args);
+        System.out.println("rocketmq-server start success！");
     }
 }

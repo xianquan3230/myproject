@@ -1,0 +1,36 @@
+server:
+  port: 9900
+spring:
+  application:
+    name: rocketmq-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.48.26.152:8848
+        username: nacos
+        password: nacos
+rocketmq:
+  name-server: 120.48.26.152:9876
+  # 默认的消息组
+  autoCreateTopicEnable: true
+  accessKey: accessKey
+  secretKey: secretKey
+  namesrvAddr: 120.48.26.152:9876
+  topic: erbi
+  groupId: anran-producer-group
+  #生产者配置
+  producer:
+    #组名
+    group: anran-producer-group
+    #目的地（topic:tag）
+    #topic
+    topic: TestTopic
+    #sync tag(同步消息tag)
+    sync-tag: anran-sync-tags
+    #async tag(异步消息tag)
+    async-tag: anran-async-tags
+    #oneway tag(单向消息tag)
+    oneway-tag: anran-oneway-tags
+logging:
+  level:
+    root: info

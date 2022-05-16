@@ -15,5 +15,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 public class LoginApplication {
     public static void main(String[] args) {
         SpringApplication.run(LoginApplication.class,args);
+        System.out.println("login-server start success！");
     }
 }

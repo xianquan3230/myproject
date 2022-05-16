@@ -13,6 +13,7 @@
         <module>gateway</module>
         <module>login</module>
         <module>es</module>
+        <module>rocket</module>
     </modules>
 
     <parent>
