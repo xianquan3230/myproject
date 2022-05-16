@@ -1,0 +1,19 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: webhook-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.48.26.152:8848
+        username: nacos
+        password: nacos
+logging:
+  level:
+    root: info
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*=/com/lcoil/mapper/*.xml
+  type-aliases-package: org.example.mapper
