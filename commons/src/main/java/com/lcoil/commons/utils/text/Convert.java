@@ -1,6 +1,6 @@
 package com.lcoil.commons.utils.text;
 
-import com.lcoil.common.core.utils.StringUtils;
+import com.lcoil.commons.utils.StringUtils;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.math.BigDecimal;

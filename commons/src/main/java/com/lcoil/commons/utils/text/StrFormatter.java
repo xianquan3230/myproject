@@ -1,6 +1,7 @@
 package com.lcoil.commons.utils.text;
 
-import com.lcoil.common.core.utils.StringUtils;
+
+import com.lcoil.commons.utils.StringUtils;
 
 /**
  * 字符串格式化

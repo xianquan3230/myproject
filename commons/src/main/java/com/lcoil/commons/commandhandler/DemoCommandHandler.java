@@ -1,8 +1,8 @@
 package com.lcoil.commons.commandhandler;
 
 import com.alibaba.fastjson.JSONObject;
-import com.lcoil.common.command.DemoCommand;
-import com.lcoil.common.core.utils.StringUtils;
+import com.lcoil.commons.command.DemoCommand;
+import com.lcoil.commons.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,7 @@ public class DemoCommandHandler implements CommandHandler<DemoCommand>{
     @Override
     public void execute(DemoCommand command) {
         boolean valid = validate(command);
-        System.out.println(StringUtils.format("command:{}", JSONObject.toJSON(command)));
+        System.out.println(StringUtils.format("command:{}", JSONObject.toJSONString(command)));
     }
 
 }
